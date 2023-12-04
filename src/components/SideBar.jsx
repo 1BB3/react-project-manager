@@ -1,6 +1,7 @@
-export default function SideBar({ onAddProject, projects }) {
+export default function SideBar({ onAddProject, projects, onSelectProject }) {
   function handleProjectClick(title) {
-    alert(title);
+    const index = projects.findIndex((project) => project.title === title);
+    onSelectProject(index);
   }
 
   return (
